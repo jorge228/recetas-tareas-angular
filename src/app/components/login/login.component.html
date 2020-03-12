@@ -1,0 +1,56 @@
+<div class="container m-5">
+    <div class="row d-flex justify-content-center">
+      <div  class="col-12 col-lg-8 px-2 px-md-5 py-3 rounded">
+<h4>Formulario de Login</h4>
+<hr>
+
+
+    <form (ngSubmit)="login(f)" #f="ngForm">
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Correo</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="email" [(ngModel)]="usuario.email" required email
+                    placeholder="Email">
+                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Password</label>
+            <div class="col-8">
+                <input class="form-control" type="password" name="password" [(ngModel)]="usuario.password" required
+                minlength="6" placeholder="Password">
+                <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">Al menos
+                    6 letras</span>
+            </div>
+        </div>
+        
+
+        <div class="col text-center">
+            <div>
+                <input [(ngModel)]="recordarme" class="checkbox" id="ckb1" type="checkbox" name="remember-me">
+                <label class="ml-1" for="ckb1">
+                      Recordar mi usuario
+                </label>
+            </div>
+
+            <div>
+                <a routerLink="/registro">
+                    ¿No tienes cuenta?
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" type="submit">
+                Ingresar
+            </button>
+        </div>
+
+    </form>
+
+</div>
+</div>
+</div>

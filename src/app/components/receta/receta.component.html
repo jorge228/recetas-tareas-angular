@@ -1,0 +1,30 @@
+
+
+<div class="container-fluid" *ngFor="let rec of recetas">
+    <div class="row m-5">
+        <div class="col-sm-4">
+            <img src="{{ rec.foto }}" class="card img-thumbnail">
+        </div>
+        <div class="col-sm-4">
+            <h2>{{ rec.nombre }}</h2>
+            <hr>
+            <h4>Info.</h4>
+            <p>Dificultad: {{ rec.dificultad }}</p>
+            <p>{{ rec.tiempo }} minutos</p>
+            <p>Precio: {{ rec.precio }}€/persona</p>
+            <p>{{ rec.kcal }} kcal por 100g</p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a routerLink="/recetas" class="btn btn-primary">Volver</a>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col">
+            <div class="card">
+            <h1 class="text-center">Preparación</h1>
+            <hr>
+            <p class="m-2">{{ rec.descripcion }}</p>
+        </div>
+    </div>
+    </div>
+</div>
